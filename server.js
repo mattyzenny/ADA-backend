@@ -9,12 +9,17 @@ app.use(cors());
 const GIT_PROJECT_ROOT = path.join(__dirname, ".."); // Ensure Git runs from the project root
 
 app.get("/last-updated", (req, res) => {
-  const startLine = Number(req.query.startLine);
-  const endLine = Number(req.query.endLine);
-  const fullPath = req.query.filePath;
-
-  const filePath = path.join("src/app", fullPath); // Ensure fullPath is defined before using
-
+  const fs = require("fs");
+  const path = require("path");
+  
+  const gitPath = path.join(__dirname, ".git");
+  
+  // Check if .git exists
+  if (!fs.existsSync(gitPath)) {
+    console.error("❌ ERROR: .git folder is missing! Git commands will fail.");
+  } else {
+    console.log("✅ .git folder exists! Git commands should work.");
+  }
   console.log("📥 Received request with:", { filePath, startLine, endLine });
 
   const command = `cd ${GIT_PROJECT_ROOT} && \

@@ -27,13 +27,21 @@ app.get("/last-updated", (req, res) => {
 
   const fs = require("fs");
   const path = require("path");
+  const { execSync } = require("child_process");
   
   const GIT_PROJECT_ROOT = path.resolve(__dirname, "..");
   const gitPath = path.join(GIT_PROJECT_ROOT, ".git");
   
-  // Log whether `.git` exists
+  // If .git is missing, reinitialize Git
   if (!fs.existsSync(gitPath)) {
-    console.error("❌ ERROR: .git folder is missing! Git commands will fail.");
+    console.error("❌ ERROR: .git folder is missing! Reinitializing Git...");
+  
+    try {
+      execSync(`git init && git remote add origin https://github.com/mattyzenny/ADA-backend.git && git fetch origin main --depth=1 && git checkout -f main`, { cwd: GIT_PROJECT_ROOT, stdio: "inherit" });
+      console.log("✅ Git has been successfully reinitialized!");
+    } catch (error) {
+      console.error("❌ Git reinitialization failed:", error.message);
+    }
   } else {
     console.log("✅ .git folder exists! Git commands should work.");
   }

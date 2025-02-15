@@ -25,9 +25,17 @@ app.get("/last-updated", (req, res) => {
   const startLine = Number(req.query.startLine);
   const endLine = Number(req.query.endLine);
 
-  if (!filePath) {
-    console.error("❌ ERROR: filePath is undefined!");
-    return res.status(400).json({ error: "filePath is required" });
+  const fs = require("fs");
+  const path = require("path");
+  
+  const GIT_PROJECT_ROOT = path.resolve(__dirname, "..");
+  const gitPath = path.join(GIT_PROJECT_ROOT, ".git");
+  
+  // Log whether `.git` exists
+  if (!fs.existsSync(gitPath)) {
+    console.error("❌ ERROR: .git folder is missing! Git commands will fail.");
+  } else {
+    console.log("✅ .git folder exists! Git commands should work.");
   }
 
   console.log(`📂 Processing file: ${filePath} from line ${startLine} to ${endLine}`);

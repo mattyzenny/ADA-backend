@@ -9,19 +9,22 @@ app.use(cors());
 const GIT_PROJECT_ROOT = path.join(__dirname, ".."); // Ensure Git runs from the project root
 
 app.get("/last-updated", (req, res) => {
-  const fs = require("fs");
-  const path = require("path");
-  
-  const gitPath = path.join(__dirname, ".git");
-  
-  // Check if .git exists
-  if (!fs.existsSync(gitPath)) {
-    console.error("❌ ERROR: .git folder is missing! Git commands will fail.");
-  } else {
-    console.log("✅ .git folder exists! Git commands should work.");
-  }
-  console.log("📥 Received request with:", { filePath, startLine, endLine });
+  console.log("📥 Received request:", req.query);
 
+  // Extract filePath, startLine, and endLine safely
+  const filePath = req.query.filePath;
+  const startLine = Number(req.query.startLine);
+  const endLine = Number(req.query.endLine);
+
+  // Check if filePath is missing
+  if (!filePath) {
+    console.error("❌ ERROR: filePath is undefined!");
+    return res.status(400).json({ error: "filePath is required" });
+  }
+
+  console.log(`📂 Processing file: ${filePath} from line ${startLine} to ${endLine}`);
+
+  // Continue with git log logic...
   const command = `cd ${GIT_PROJECT_ROOT} && \
   git log -1 --format="%cr" -L ${startLine},${endLine}:$(git ls-files | grep -i -m 1 "${filePath}") | head -1`;
 

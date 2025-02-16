@@ -32,8 +32,8 @@ app.get("/last-updated", (req, res) => {
   console.log("📥 Received request:", req.query);
 
   const filePath = req.query.filePath;
-  if (!filePath) {
-    return res.status(400).json({ error: "Missing filePath" });
+  if (filePath && !filePath.startsWith('src/app/')) {
+    req.query.filePath = `${filePath}`;
   }
 
   // Ensure updates.json exists before reading

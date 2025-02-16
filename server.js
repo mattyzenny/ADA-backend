@@ -10,9 +10,7 @@ app.use(cors()); // Enable CORS for cross-origin requests
 const isLocal = process.env.NODE_ENV !== "production";
 const JSON_FILE = isLocal
   ? path.join(__dirname, "updates.json")  // Local path
-  : path.join("/app", "updates.json"); // Adjust for Render's environment
-
-// Get the port number from environment variables or default to 1000 for local
+  : path.join("/tmp", "updates.json"); // Use /tmp/ for Render (writable)
 const PORT = process.env.PORT || (process.env.NODE_ENV === "production" ? 3000 : 1000);
 
 app.get("/last-updated", (req, res) => {

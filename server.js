@@ -1,14 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(cors()); // Enable CORS for cross-origin requests
 
-const JSON_FILE = "updates.json"; // Path to the JSON file storing last-updated timestamps
+// Determine if running locally or in production
+const isLocal = process.env.NODE_ENV !== "production";
+const JSON_FILE = isLocal
+  ? path.join(__dirname, "updates.json")  // Local path
+  : path.join("/app", "updates.json"); // Adjust for Render's environment
 
 // Get the port number from environment variables or default to 1000 for local
-const PORT = process.env.PORT || (process.env.NODE_ENV === 'production' ? 3000 : 1000);
+const PORT = process.env.PORT || (process.env.NODE_ENV === "production" ? 3000 : 1000);
 
 app.get("/last-updated", (req, res) => {
   console.log("📥 Received request:", req.query);
@@ -33,4 +38,4 @@ app.get("/last-updated", (req, res) => {
 });
 
 // Start the Express server
-app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT} (${isLocal ? "Local" : "Render"})`));

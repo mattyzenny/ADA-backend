@@ -23,18 +23,23 @@ app.get("/last-updated", (req, res) => {
     return res.status(400).json({ error: "Missing filePath" });
   }
 
-  // Read the updates.json file
-  fs.readFile(JSON_FILE, "utf8", (err, data) => {
-    if (err) {
-      console.error("❌ Error reading updates.json:", err);
-      return res.status(500).json({ error: "Could not read updates file" });
-    }
+// Ensure updates.json exists before reading
+if (!fs.existsSync(JSON_FILE)) {
+  console.log("⚠️ updates.json not found, creating a new one...");
+  fs.writeFileSync(JSON_FILE, "{}");
+}
 
-    const updates = JSON.parse(data);
-    const lastUpdated = updates[filePath] || "Unknown";
+fs.readFile(JSON_FILE, "utf8", (err, data) => {
+  if (err) {
+    console.error("❌ Error reading updates.json:", err);
+    return res.status(500).json({ error: "Could not read updates file" });
+  }
 
-    res.json({ updated: lastUpdated });
-  });
+  const updates = JSON.parse(data);
+  const lastUpdated = updates[filePath] || "Unknown";
+
+  res.json({ updated: lastUpdated });
+});
 });
 
 // Start the Express server

@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios"); // Use Axios for API requests
 
-const app = express(); // Initialize Express app
+const app = express(); // Initialize Express
 app.use(cors()); // Enable CORS for cross-origin requests
 
 const GITHUB_REPO = "mattyzenny/accessibility-training"; // Your GitHub repo
@@ -16,7 +16,6 @@ app.get("/last-updated", async (req, res) => {
     return res.status(400).json({ error: "filePath is required" });
   }
 
-  // Handle case sensitivity by checking multiple path formats
   const possiblePaths = [
     filePath,                     // User-provided path
     filePath.toLowerCase(),        // Lowercase variant
@@ -27,12 +26,16 @@ app.get("/last-updated", async (req, res) => {
     for (let path of possiblePaths) {
       const headers = {
         "User-Agent": "GitHub-API-Request",
-        // No Authorization header is needed for public repos
       };
+
+      // If token is present in environment, use it for authentication
+      if (process.env.GITHUB_TOKEN) {
+        headers["Authorization"] = `token ${process.env.GITHUB_TOKEN}`;
+      }
 
       const response = await axios.get(`https://api.github.com/repos/${GITHUB_REPO}/commits`, {
         params: { sha: BRANCH, path: path, per_page: 1 },
-        headers: headers, // Pass headers without the token
+        headers: headers, // Add token if present
       });
 
       if (response.data.length > 0) {

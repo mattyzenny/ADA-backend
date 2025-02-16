@@ -5,7 +5,7 @@ const axios = require("axios"); // Use Axios for API requests
 const app = express();
 app.use(cors());
 
-const GITHUB_REPO = "mattyzenny/ADA-backend"; // Your GitHub repo
+const GITHUB_REPO = "mattyzenny/accessibility-training"; // Your GitHub repo
 
 app.get("/last-updated", async (req, res) => {
   console.log("📥 Received request:", req.query);

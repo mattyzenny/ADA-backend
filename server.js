@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios"); // Use Axios for API requests
+const { exec } = require("child_process");
 
 const app = express();
 app.use(cors()); // Enable CORS for cross-origin requests
@@ -9,59 +9,56 @@ app.use(cors()); // Enable CORS for cross-origin requests
 const GITHUB_REPO = "mattyzenny/accessibility-training"; // Your GitHub repo
 const BRANCH = "master"; // Branch name (could be dynamic)
 
-app.get("/last-updated", async (req, res) => {
+app.get("/last-updated", (req, res) => {
   console.log("📥 Received request:", req.query);
 
   const { filePath, startLine, endLine } = req.query;
 
-  // Handle case sensitivity and format file path variations
-  const possiblePaths = generatePossiblePaths(filePath);
-
-  try {
-    for (let path of possiblePaths) {
-      // Fetch commit data using GitHub API
-      const response = await fetchCommitData(path, startLine, endLine);
-
-      if (response.data.length > 0) {
-        const lastCommit = response.data[0].commit.committer.date;
-        console.log(`✅ Commit found for ${path} from line ${startLine} to ${endLine}:`, lastCommit);
-        return res.json({ updated: new Date(lastCommit).toLocaleString() });
-      }
-    }
-
-    throw new Error("No commits found for this file.");
-  } catch (error) {
-    console.error("❌ GitHub API Error:", error.message);
-    return res.status(500).json({ updated: "Unknown", error: error.message });
+  // Ensure that filePath, startLine, and endLine are valid
+  if (!filePath || !startLine || !endLine) {
+    return res.status(400).json({ error: "Missing filePath, startLine, or endLine" });
   }
-});
 
-// Helper function to generate possible paths (case variations)
-function generatePossiblePaths(filePath) {
-  return [
+  // Handle case sensitivity and format file path variations
+  const possiblePaths = [
     filePath,                     // User-provided path
     filePath.toLowerCase(),       // Lowercase variant
     filePath.replace(/\/([a-z])/g, (m, p1) => `/${p1.toUpperCase()}`), // Capitalize folders
   ];
-}
 
-// Helper function to fetch commit data from GitHub API
-async function fetchCommitData(path, startLine, endLine) {
-  const headers = {
-    "User-Agent": "GitHub-API-Request",
-  };
+  let isFound = false;
 
-  // If token is present in environment, use it for authentication
-  if (process.env.GITHUB_TOKEN) {
-    headers["Authorization"] = `token ${process.env.GITHUB_TOKEN}`;
+  for (let path of possiblePaths) {
+    console.log("Checking path:", path);
+
+    // Construct the git log -L command to fetch commit data for the specific lines
+    const command = `git log -1 --format="%cr" -L ${startLine},${endLine}:${path}`;
+    console.log("Running command:", command); // Log the exact command being run
+
+    exec(command, (error, stdout, stderr) => {
+      if (error || stderr) {
+        const errorMsg = stderr.trim() || error.message;
+        console.error("❌ Git error:", errorMsg);
+        return; // Do not send a response here, handle at the end
+      }
+
+      if (stdout.trim()) {
+        console.log("✅ Commit found:", stdout.trim());
+        res.json({ updated: stdout.trim() }); // Send response once
+        isFound = true;
+      }
+    });
+
+    // Prevent sending multiple responses
+    if (isFound) {
+      break;
+    }
   }
 
-  const command = `git log -1 --format="%cr" -L ${startLine},${endLine}:${path}`;
-  return await axios.get(`https://api.github.com/repos/${GITHUB_REPO}/commits`, {
-    params: { sha: BRANCH, path: path, per_page: 1 },
-    headers: headers,
-  });
-}
+  if (!isFound) {
+    res.status(404).json({ updated: "Unknown", error: "No commits found for this file." });
+  }
+});
 
 // Set the port used by Render or fall back to 10000 for local testing
 const PORT = process.env.PORT || 10000;

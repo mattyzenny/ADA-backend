@@ -1,15 +1,48 @@
 {
   "src/app/Resources/resources.component.ts": {
-    "@@": "",
-    "-52": "",
-    "+52": "2025-02-16T17:55:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -53,40 +52,40 @@\n-        term: 'Assistive ',\n+        term: ' Teabcdchnology',\n         definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',\n         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 52,\n         endLine: 59\n       },\n       {\n-        term: 'WebAIM',\n+        term: 'newTerm',\n         definition: 'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',\n         link: 'https://webaim.org/',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 60,\n         endLine: 67,\n       },\n       {\n-        term: 'Deque ',\n+        term: 'Deque Systems',\n         definition: 'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',\n         link: 'https://www.deque.com/',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 68,\n         endLine: 75\n       },\n       {\n-        term: '',\n+        term: 'W3dC',\n         definition: \"The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.\",\n         link: 'https://www.w3.org/',\n         updated: 'Loading...',\n         startLine: 76,\n         endLine: 83\n       },\n     ];\n       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time \n       this.definitions.forEach(definition => {\n         this.gitService.getLastUpdated(this.filePath, definition.startLine, definition.endLine).subscribe(response => {\n           definition.updated = this.getFormattedDate(response.updated); // Format the updated time using DatePipe\n         });\n       });\n   }\n }",
-    "export": "",
-    "class": "",
-    "ResourcesComponent": "",
-    "implements": "",
-    "OnInit": "",
-    "{": "",
-    "-76": "",
-    "+76": "2025-02-16T17:55:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -77,16 +76,16 @@\n-        term: '',\n+        term: 'W3dC',\n         definition: \"The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.\",\n         link: 'https://www.w3.org/',\n         updated: 'Loading...',\n         startLine: 76,\n         endLine: 83\n       },\n     ];\n       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time \n       this.definitions.forEach(definition => {\n         this.gitService.getLastUpdated(this.filePath, definition.startLine, definition.endLine).subscribe(response => {\n           definition.updated = this.getFormattedDate(response.updated); // Format the updated time using DatePipe\n         });\n       });\n   }\n }"
+    "@@": {
+      "term": "",
+      "updated": ""
+    },
+    "-52": {
+      "term": "",
+      "updated": ""
+    },
+    "+52": {
+      "term": "",
+      "updated": "2025-02-16T17:55:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -53,40 +52,40 @@\n-        term: 'Assistive ',\n+        term: ' Teabcdchnology',\n         definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',\n         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 52,\n         endLine: 59\n       },\n       {\n-        term: 'WebAIM',\n+        term: 'newTerm',\n         definition: 'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',\n         link: 'https://webaim.org/',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 60,\n         endLine: 67,\n       },\n       {\n-        term: 'Deque ',\n+        term: 'Deque Systems',\n         definition: 'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',\n         link: 'https://www.deque.com/',\n-        updated: '...',\n+        updated: 'Loading...',\n         startLine: 68,\n         endLine: 75\n       },\n       {\n-        term: '',\n+        term: 'W3dC',\n         definition: \"The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.\",\n         link: 'https://www.w3.org/',\n         updated: 'Loading...',\n         startLine: 76,\n         endLine: 83\n       },\n     ];\n       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time \n       this.definitions.forEach(definition => {\n         this.gitService.getLastUpdated(this.filePath, definition.startLine, definition.endLine).subscribe(response => {\n           definition.updated = this.getFormattedDate(response.updated); // Format the updated time using DatePipe\n         });\n       });\n   }\n }"
+    },
+    "export": {
+      "term": "",
+      "updated": ""
+    },
+    "class": {
+      "term": "",
+      "updated": ""
+    },
+    "ResourcesComponent": {
+      "term": "",
+      "updated": ""
+    },
+    "implements": {
+      "term": "",
+      "updated": ""
+    },
+    "OnInit": {
+      "term": "",
+      "updated": ""
+    },
+    "{": {
+      "term": "",
+      "updated": ""
+    },
+    "-76": {
+      "term": "",
+      "updated": ""
+    },
+    "+76": {
+      "term": "",
+      "updated": "2025-02-16T17:55:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -77,16 +76,16 @@\n-        term: '',\n+        term: 'W3dC',\n         definition: \"The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.\",\n         link: 'https://www.w3.org/',\n         updated: 'Loading...',\n         startLine: 76,\n         endLine: 83\n       },\n     ];\n       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time \n       this.definitions.forEach(definition => {\n         this.gitService.getLastUpdated(this.filePath, definition.startLine, definition.endLine).subscribe(response => {\n           definition.updated = this.getFormattedDate(response.updated); // Format the updated time using DatePipe\n         });\n       });\n   }\n }"
+    }
   }
 }

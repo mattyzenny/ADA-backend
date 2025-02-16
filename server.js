@@ -25,8 +25,8 @@ if (!isLocal) {
   }
 }
 
-// Get the port number from environment variables or default to 1000 for local
-const PORT = process.env.PORT || (process.env.NODE_ENV === "production" ? 3000 : 1000);
+// Get the port number from environment variables or default to 3000 for local
+const PORT = process.env.PORT || (process.env.NODE_ENV === "production" ? 1000 : 3000);
 
 app.get("/last-updated", (req, res) => {
   console.log("📥 Received request:", req.query);

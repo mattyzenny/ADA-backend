@@ -1,16 +1,44 @@
 {
   "src/app/Resources/resources.component.ts": {
+    "3-0": {
+      "term": "",
+      "updated": ""
+    },
+    "import": {
+      "term": "",
+      "updated": ""
+    },
+    "{": {
+      "term": "",
+      "updated": ""
+    },
+    "DatePipe": {
+      "term": "",
+      "updated": ""
+    },
+    "}": {
+      "term": "",
+      "updated": ""
+    },
+    "from": {
+      "term": "",
+      "updated": ""
+    },
+    "'@angular/common';": {
+      "term": "",
+      "updated": ""
+    },
     "@@": {
       "term": "",
       "updated": ""
     },
-    "-12": {
+    "-13": {
       "term": "",
       "updated": ""
     },
     "+12": {
       "term": "",
-      "updated": "2025-02-16T22:50:14\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -12,80 +12,80 @@\n   definitions: Rec\n   filePath = 'src/\n   constructor(priv\n \n   getFormattedDate\n     const dateForm\n     const timeForm\n     \n     return `${date\n   }\n   \n   ngOnInit(): void\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitio\n       {\n         term: 'AT'\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n-        term: 'new\n+        term: 'new\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -12,87 +12,99 @@\n   title = 'Resourc\n   definitions: Rec\n   filePath = 'src/\n   constructor(priv\n \n   getFormattedDate\n     const dateForm\n     const timeForm\n     \n     return `${date\n   }\n   \n   ngOnInit(): void\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitio\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
     },
     "export": {
       "term": "",
@@ -32,37 +60,65 @@
       "term": "",
       "updated": ""
     },
-    "{": {
-      "term": "",
-      "updated": ""
-    },
-    "-50": {
+    "-51": {
       "term": "",
       "updated": ""
     },
     "+50": {
       "term": "",
-      "updated": "2025-02-16T22:50:14\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -50,42 +50,42 @@\n     this.definitio\n       {\n         term: 'AT'\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n-        term: 'new\n+        term: 'new\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -50,49 +50,61 @@\n \n     this.definitio\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
     },
-    "-60": {
+    "-53,19": {
+      "term": "",
+      "updated": ""
+    },
+    "+52": {
+      "term": "",
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -52,47 +52,59 @@\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+    },
+    "-75": {
+      "term": "",
+      "updated": ""
+    },
+    "+56": {
+      "term": "",
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -56,43 +56,55 @@\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+    },
+    "-79": {
       "term": "",
       "updated": ""
     },
     "+60": {
       "term": "",
-      "updated": "2025-02-16T22:50:14\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -60,32 +60,32 @@\n-        term: 'new\n+        term: 'new\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -59,40 +60,51 @@\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+    },
+    "-84": {
+      "term": "",
+      "updated": ""
+    },
+    "+65": {
+      "term": "",
+      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -59,40 +65,46 @@\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+    },
+    "72-2": {
+      "term": "",
+      "updated": ""
+    },
+    "80-2": {
+      "term": "",
+      "updated": ""
     },
     "84-7": {
       "term": "",
       "updated": ""
     },
-    "-89,0": {
+    "-108,0": {
       "term": "",
       "updated": ""
     },
     "+92": {
       "term": "",
-      "updated": ""
+      "updated": "2025-02-16T14:49:55\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -80,19 +80,19 @@\n         endLine: 7\n       },\n       {\n         term: 'W3C\n-        definition\n+        definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
     }
   }
 }

@@ -4,121 +4,17 @@
       "term": "",
       "updated": ""
     },
-    "import": {
-      "term": "",
-      "updated": ""
-    },
-    "{": {
-      "term": "",
-      "updated": ""
-    },
-    "DatePipe": {
-      "term": "",
-      "updated": ""
-    },
-    "}": {
-      "term": "",
-      "updated": ""
-    },
-    "from": {
-      "term": "",
-      "updated": ""
-    },
-    "'@angular/common';": {
-      "term": "",
-      "updated": ""
-    },
-    "@@": {
-      "term": "",
-      "updated": ""
-    },
-    "-13": {
-      "term": "",
-      "updated": ""
-    },
-    "+12": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -12,87 +12,99 @@\n   title = 'Resourc\n   definitions: Rec\n   filePath = 'src/\n   constructor(priv\n \n   getFormattedDate\n     const dateForm\n     const timeForm\n     \n     return `${date\n   }\n   \n   ngOnInit(): void\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitio\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
-    "export": {
-      "term": "",
-      "updated": ""
-    },
-    "class": {
-      "term": "",
-      "updated": ""
-    },
-    "ResourcesComponent": {
-      "term": "",
-      "updated": ""
-    },
-    "implements": {
-      "term": "",
-      "updated": ""
-    },
-    "OnInit": {
-      "term": "",
-      "updated": ""
-    },
-    "-51": {
-      "term": "",
-      "updated": ""
-    },
-    "+50": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -50,49 +50,61 @@\n \n     this.definitio\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
-    "-53,19": {
-      "term": "",
-      "updated": ""
-    },
-    "+52": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -52,47 +52,59 @@\n       {\n         term: 'new\n         definition\n         link,\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
-    "-75": {
-      "term": "",
-      "updated": ""
-    },
-    "+56": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -56,43 +56,55 @@\n         updated: '\n       },\n       {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
-    "-79": {
-      "term": "",
-      "updated": ""
-    },
-    "+60": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -59,40 +60,51 @@\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
-    "-84": {
-      "term": "",
-      "updated": ""
-    },
-    "+65": {
-      "term": "",
-      "updated": "2025-02-16T14:51:25\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -59,40 +65,46 @@\n+        term: 'new\n+        definition\n+        link,\n+        updated: '\n+      },\n+      {\n         term: 'Ass\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 5\n       },\n       {\n         term: 'Web\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 6\n       },\n       {\n         term: 'Deq\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 7\n       },\n       {\n         term: 'W3C\n         definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
-    },
     "72-2": {
       "term": "",
-      "updated": ""
+      "updated": "2025-02-16T14:51:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -2,59 +2,71 @@\n import { GitService } from '../Services/git.service';\n import { DatePipe } from '@angular/common';\n import { link } from 'fs';\n @Component({\n   selector: 'Resources',\n   templateUrl: './resources.component.html',\n   styleUrls: ['./resources.component.scss'],\n   providers: [DatePipe]\n })\n export class ResourcesComponent implements OnInit {\n   title = 'Resources';\n   definitions: Record<string, any>[] = []; // For stricter checking definitions: { term: string; definition: string; link: string; updated?: string }[] = [];\n   filePath = 'src/app/Resources/resources.component.ts';\n   constructor(private gitService: GitService, private datePipe: DatePipe) {}\n \n   getFormattedDate(date: string) {\n     const dateFormat = this.datePipe.transform(date, 'MMM d');  // 'Feb 16'\n     const timeFormat = this.datePipe.transform(date, 'h:mm a'); // '11:00'\n     \n     return `${dateFormat}, ${timeFormat}`;\n   }\n   \n   ngOnInit(): void {\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitions = [\n       {\n         term: 'new array',\n         definition: '',\n         link,\n         updated: 'Loading...',\n       },\n       {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n         term: 'Assistive Technology',\n         definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',"
     },
     "80-2": {
       "term": "",
-      "updated": ""
+      "updated": "2025-02-16T14:51:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -2,67 +2,79 @@\n import { GitService } from '../Services/git.service';\n import { DatePipe } from '@angular/common';\n import { link } from 'fs';\n @Component({\n   selector: 'Resources',\n   templateUrl: './resources.component.html',\n   styleUrls: ['./resources.component.scss'],\n   providers: [DatePipe]\n })\n export class ResourcesComponent implements OnInit {\n   title = 'Resources';\n   definitions: Record<string, any>[] = []; // For stricter checking definitions: { term: string; definition: string; link: string; updated?: string }[] = [];\n   filePath = 'src/app/Resources/resources.component.ts';\n   constructor(private gitService: GitService, private datePipe: DatePipe) {}\n \n   getFormattedDate(date: string) {\n     const dateFormat = this.datePipe.transform(date, 'MMM d');  // 'Feb 16'\n     const timeFormat = this.datePipe.transform(date, 'h:mm a'); // '11:00'\n     \n     return `${dateFormat}, ${timeFormat}`;\n   }\n   \n   ngOnInit(): void {\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitions = [\n       {\n         term: 'new array',\n         definition: '',\n         link,\n         updated: 'Loading...',\n       },\n       {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n         term: 'Assistive Technology',\n         definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',\n         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',\n         updated: 'Loading...',\n         startLine: 51,\n         endLine: 59\n       },\n       {\n         term: 'WebAIM',\n         definition: 'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',"
     },
     "84-7": {
       "term": "",
-      "updated": ""
-    },
-    "-108,0": {
-      "term": "",
-      "updated": ""
-    },
-    "+92": {
-      "term": "",
-      "updated": "2025-02-16T14:49:55\n\ndiff --git a/src/ap\n--- a/src/app/Resou\n+++ b/src/app/Resou\n@@ -80,19 +80,19 @@\n         endLine: 7\n       },\n       {\n         term: 'W3C\n-        definition\n+        definition\n         link: 'htt\n         updated: '\n         startLine:\n         endLine: 8\n       },\n     ];\n       // Call API \n       this.definit\n         this.gitSe\n           definiti\n         });\n       });\n   }\n }"
+      "updated": "2025-02-16T14:51:25-05:00\n\ndiff --git a/src/app/Resources/resources.component.ts b/src/app/Resources/resources.component.ts\n--- a/src/app/Resources/resources.component.ts\n+++ b/src/app/Resources/resources.component.ts\n@@ -7,66 +7,78 @@\n   templateUrl: './resources.component.html',\n   styleUrls: ['./resources.component.scss'],\n   providers: [DatePipe]\n })\n export class ResourcesComponent implements OnInit {\n   title = 'Resources';\n   definitions: Record<string, any>[] = []; // For stricter checking definitions: { term: string; definition: string; link: string; updated?: string }[] = [];\n   filePath = 'src/app/Resources/resources.component.ts';\n   constructor(private gitService: GitService, private datePipe: DatePipe) {}\n \n   getFormattedDate(date: string) {\n     const dateFormat = this.datePipe.transform(date, 'MMM d');  // 'Feb 16'\n     const timeFormat = this.datePipe.transform(date, 'h:mm a'); // '11:00'\n     \n     return `${dateFormat}, ${timeFormat}`;\n   }\n   \n   ngOnInit(): void {\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n     this.definitions = [\n       {\n         term: 'new array',\n         definition: '',\n         link,\n         updated: 'Loading...',\n       },\n       {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n+        term: 'new array',\n+        definition: '',\n+        link,\n+        updated: 'Loading...',\n+      },\n+      {\n         term: 'Assistive Technology',\n         definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',\n         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',\n         updated: 'Loading...',\n         startLine: 51,\n         endLine: 59\n       },\n       {\n         term: 'WebAIM',\n         definition: 'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',\n         link: 'https://webaim.org/',\n         updated: 'Loading...',\n         startLine: 60,\n         endLine: 68,"
     }
   }
 }

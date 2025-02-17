@@ -1,61 +1,81 @@
-const express = require("express");
-const cors = require("cors");
-const fs = require("fs");
-const path = require("path");
+const express = require('express');
+const cors = require('cors');
+const execSync = require('child_process').execSync;  // Required to execute git command
+const fs = require('fs'); // To read file contents
 
 const app = express();
-app.use(cors()); // Enable CORS for cross-origin requests
+app.use(cors());
 
-// Determine if running locally or in production
-const isLocal = process.env.NODE_ENV !== "production";
-const JSON_FILE = isLocal
-  ? path.join(__dirname, "updates.json") // Local path
-  : path.join("/tmp", "updates.json"); // Use /tmp/ in Render
+const GITHUB_REPO = "mattyzenny/accessibility-training";  // Your GitHub repo
+const BRANCH = "master";  // The branch you want to check
 
-// Ensure updates.json persists in Render by copying from the repo at startup
-if (!isLocal) {
-  const PERSISTENT_JSON = path.join(__dirname, "updates.json"); // Git-tracked file
+// ### GetLastUpdated Helper Functions ###
 
-  if (fs.existsSync(PERSISTENT_JSON)) {
-    console.log("📂 Copying updates.json from repo to /tmp...");
-    fs.copyFileSync(PERSISTENT_JSON, JSON_FILE);
-  } else {
-    console.log("⚠️ No updates.json found in repo. Creating a new one...");
-    fs.writeFileSync(JSON_FILE, "{}");
+function buildGitCommand(filePath, startLine, endLine) {
+  return `git log -L ${startLine},${endLine}:${filePath}`;
+}
+
+function extractCommitDate(output) {
+  const dateMatch = output.match(/Date:\s*(.*)/);
+  return dateMatch ? dateMatch[1] : 'Unknown';
+}
+
+// ### GetTermAndDefinition Helper Functions ###
+
+function extractTerm(content) {
+  const termMatch = content.match(/term:\s*'([^']+)'/);
+  return termMatch ? termMatch[1] : 'Unknown Term';
+}
+
+function extractDefinition(content) {
+  const definitionMatch = content.match(/definition:\s*'([^']+)'/);
+  return definitionMatch ? definitionMatch[1] : 'No definition available';
+}
+
+// ### Main Logic Functions ###
+
+// Function to get last updated date using git log
+function getLastUpdated(filePath, startLine, endLine) {
+  try {
+    const command = buildGitCommand(filePath, startLine, endLine);
+    const output = execSync(command).toString();
+    return extractCommitDate(output);
+  } catch (error) {
+    console.error("Error running git log:", error);
+    return 'Unknown';
   }
 }
 
-// Get the port number from environment variables or default to 3000 for local
-const PORT = process.env.PORT || (process.env.NODE_ENV === "production" ? 1000 : 3000);
-
-app.get("/last-updated", (req, res) => {
-  console.log("📥 Received request:", req.query);
-
-  const filePath = req.query.filePath;
-  if (filePath && !filePath.startsWith('src/app/')) {
-    req.query.filePath = `${filePath}`;
+// Function to read file and extract term and definition
+function getTermAndDefinition(filePath, startLine, endLine) {
+  try {
+    const lines = fs.readFileSync(filePath, 'utf-8').split('\n');
+    const relevantLines = lines.slice(startLine - 1, endLine).join(' ');
+    return { 
+      term: extractTerm(relevantLines), 
+      definition: extractDefinition(relevantLines) 
+    };
+  } catch (error) {
+    console.error("Error reading file:", error);
+    throw new Error("Unable to retrieve term/definition");
   }
+}
 
-  // Ensure updates.json exists before reading
-  if (!fs.existsSync(JSON_FILE)) {
-    console.log("⚠️ updates.json not found, creating a new one...");
-    fs.writeFileSync(JSON_FILE, "{}");
-  }
+// ### API Endpoint ###
 
-  fs.readFile(JSON_FILE, "utf8", (err, data) => {
-    if (err) {
-      console.error("❌ Error reading updates.json:", err);
-      return res.status(500).json({ error: "Could not read updates file" });
-    }
+app.get("/last-updated", async (req, res) => {
+  const { filePath, startLine, endLine } = req.query;
+  console.log(`Received request: filePath=${filePath}, startLine=${startLine}, endLine=${endLine}`);
 
-    const updates = JSON.parse(data);
-    const lastUpdated = updates[filePath] || "Unknown";
+  // Get last updated information using git log
+  const lastUpdated = getLastUpdated(filePath, startLine, endLine);
+  
+  // Get term and definition dynamically from the file content
+  const { term, definition } = getTermAndDefinition(filePath, parseInt(startLine), parseInt(endLine));
 
-    res.json({ updated: lastUpdated });
-  });
+  // Respond with the full object containing term, definition, and updated date
+  return res.json({ term, definition, updated: lastUpdated });
 });
 
-// Start the Express server
-app.listen(PORT, () =>
-  console.log(`✅ Backend running on port ${PORT} (${isLocal ? "Local" : "Render"})`)
-);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log( `✅ Backend running on port ${PORT}`));

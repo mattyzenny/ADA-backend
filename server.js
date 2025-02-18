@@ -4,7 +4,17 @@ const execSync = require('child_process').execSync;  // Required to execute git 
 const fs = require('fs'); // To read file contents
 
 const app = express();
-app.use(cors());
+const allowedOrigins = ['https://mattyzenny.github.io', 'http://localhost:3000']; // Add your front-end URL
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Block the request
+    }
+  }
+}));
 
 const GITHUB_REPO = "mattyzenny/accessibility-training";  // Your GitHub repo
 const BRANCH = "master";  // The branch you want to check

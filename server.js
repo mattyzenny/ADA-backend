@@ -38,12 +38,10 @@ function extractDefinition(content) {
 function getLastUpdated(filePath, startLine, endLine) {
   try {
     const command = buildGitCommand(filePath, startLine, endLine);
-    console.log('Running command:', command);  // Log the command being executed
     const output = execSync(command).toString();
-    console.log('Git log output:', output);  // Log the command output
     return extractCommitDate(output);
   } catch (error) {
-    console.error("Error running git log:", error.message);
+    console.error("Error running git log:", error);
     return 'Unknown';
   }
 }
@@ -73,10 +71,10 @@ app.get("/last-updated", async (req, res) => {
   const lastUpdated = getLastUpdated(filePath, startLine, endLine);
   
   // Get term and definition dynamically from the file content
-  const { term, definition } = getTermAndDefinition(filePath, parseInt(startLine), parseInt(endLine));
+  // const { term, definition } = getTermAndDefinition(filePath, parseInt(startLine), parseInt(endLine));
 
   // Respond with the full object containing term, definition, and updated date
-  return res.json({ term, definition, updated: lastUpdated });
+  return res.json({ updated: lastUpdated });
 });
 
 const PORT = process.env.PORT || 3000;

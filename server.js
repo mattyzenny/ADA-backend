@@ -4,17 +4,7 @@ const execSync = require('child_process').execSync;  // Required to execute git 
 const fs = require('fs'); // To read file contents
 
 const app = express();
-const allowedOrigins = ['https://mattyzenny.github.io/accessibility-training/', 'http://localhost:3000', 'http://localhost:1000']; // Add your front-end URL
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true); // Allow the request
-    } else {
-      callback(new Error('Not allowed by CORS')); // Block the request
-    }
-  }
-}));
+app.use(cors());
 
 const GITHUB_REPO = "mattyzenny/accessibility-training";  // Your GitHub repo
 const BRANCH = "master";  // The branch you want to check
@@ -57,19 +47,19 @@ function getLastUpdated(filePath, startLine, endLine) {
 }
 
 // Function to read file and extract term and definition
-function getTermAndDefinition(filePath, startLine, endLine) {
-  try {
-    const lines = fs.readFileSync(filePath, 'utf-8').split('\n');
-    const relevantLines = lines.slice(startLine - 1, endLine).join(' ');
-    return { 
-      term: extractTerm(relevantLines), 
-      definition: extractDefinition(relevantLines) 
-    };
-  } catch (error) {
-    console.error("Error reading file:", error);
-    throw new Error("Unable to retrieve term/definition");
-  }
-}
+// function getTermAndDefinition(filePath, startLine, endLine) {
+//   try {
+//     const lines = fs.readFileSync(filePath, 'utf-8').split('\n');
+//     const relevantLines = lines.slice(startLine - 1, endLine).join(' ');
+//     return { 
+//       term: extractTerm(relevantLines), 
+//       definition: extractDefinition(relevantLines) 
+//     };
+//   } catch (error) {
+//     console.error("Error reading file:", error);
+//     throw new Error("Unable to retrieve term/definition");
+//   }
+// }
 
 // ### API Endpoint ###
 
@@ -81,10 +71,10 @@ app.get("/last-updated", async (req, res) => {
   const lastUpdated = getLastUpdated(filePath, startLine, endLine);
   
   // Get term and definition dynamically from the file content
-  const { term, definition } = getTermAndDefinition(filePath, parseInt(startLine), parseInt(endLine));
+  // const { term, definition } = getTermAndDefinition(filePath, parseInt(startLine), parseInt(endLine));
 
   // Respond with the full object containing term, definition, and updated date
-  return res.json({ term, definition, updated: lastUpdated });
+  return res.json({ updated: lastUpdated });
 });
 
 const PORT = process.env.PORT || 3000;

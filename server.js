@@ -4,7 +4,7 @@ const execSync = require('child_process').execSync;  // Required to execute git 
 const fs = require('fs'); // To read file contents
 
 const app = express();
-const allowedOrigins = ['https://mattyzenny.github.io', 'http://localhost:3000']; // Add your front-end URL
+const allowedOrigins = ['https://mattyzenny.github.io/accessibility-training/', 'http://localhost:3000', 'http://localhost:1000']; // Add your front-end URL
 
 app.use(cors({
   origin: function (origin, callback) {

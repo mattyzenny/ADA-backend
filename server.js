@@ -6,24 +6,29 @@ const path = require('path');
 const app = express();
 app.use(cors());
 
-app.get('/last-updated', (req, res) => {
-  const filePath = req.query.filePath;
+app.get("/last-updated", (req, res) => {
+  const { filePath } = req.query;
 
-  if (!filePath || filePath !== 'contentBundle.json') {
-    return res.status(400).json({ error: 'Invalid or missing filePath parameter' });
-  }
+  // ✅ Correct path to contentBundle.json
+  const fileToRead = path.join(__dirname, filePath);
 
-  const contentBundlePath = path.join(__dirname, 'contentBundle.json');
+  console.log("🔍 Trying to read file:", fileToRead);
 
-  fs.readFile(contentBundlePath, 'utf8', (err, data) => {
+  fs.readFile(fileToRead, 'utf-8', (err, data) => {
     if (err) {
-      console.error("❌ Error reading contentBundle.json:", err);
-      return res.status(500).json({ error: 'Unable to read contentBundle.json' });
+      console.error("❌ Error reading file:", err);
+      return res.status(500).json({ message: "Failed to read contentBundle.json", error: err.message });
     }
 
-    res.json(JSON.parse(data));
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseErr) {
+      console.error("❌ Error parsing JSON:", parseErr);
+      res.status(500).json({ message: "Invalid JSON format", error: parseErr.message });
+    }
   });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));

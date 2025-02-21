@@ -1,32 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
-app.use(cors()); // ✅ Enable CORS
+app.use(cors());
 
-// ✅ Existing route to fetch directly from GitHub
-app.get('/content-bundle', async (req, res) => {
-  const githubRawURL = 'https://raw.githubusercontent.com/mattyzenny/accessibility-training/main/src/assets/contentBundle/contentBundle.json';
-
-  try {
-    console.log("🌐 Fetching contentBundle.json from GitHub...");
-    const response = await axios.get(githubRawURL);
-
-    console.log("✅ Successfully fetched contentBundle.json");
-    res.json(response.data);
-  } catch (error) {
-    console.error("❌ Failed to fetch from GitHub:", error.message);
-    res.status(500).json({
-      error: 'Failed to fetch content bundle from GitHub',
-      details: error.message
-    });
-  }
-});
-
-// ✅ 🔥 NEW ROUTE for /last-updated (to fix 404)
 app.get('/last-updated', (req, res) => {
   const filePath = req.query.filePath;
 
@@ -34,22 +13,17 @@ app.get('/last-updated', (req, res) => {
     return res.status(400).json({ error: 'Invalid or missing filePath parameter' });
   }
 
-  // Use GitHub as the source for consistency
-  const githubRawURL = 'https://raw.githubusercontent.com/mattyzenny/accessibility-training/main/src/assets/contentBundle/contentBundle.json';
+  const contentBundlePath = path.join(__dirname, 'contentBundle.json');
 
-  axios.get(githubRawURL)
-    .then(response => res.json(response.data))
-    .catch(err => {
-      console.error("❌ Error fetching from GitHub in /last-updated:", err.message);
-      res.status(500).json({ error: 'Failed to fetch content bundle', details: err.message });
-    });
+  fs.readFile(contentBundlePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error("❌ Error reading contentBundle.json:", err);
+      return res.status(500).json({ error: 'Unable to read contentBundle.json' });
+    }
+
+    res.json(JSON.parse(data));
+  });
 });
 
-// ✅ Health check route
-app.get('/health', (req, res) => {
-  res.json({ status: 'Backend is running smoothly 🚀' });
-});
-
-// ✅ Start the backend
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));
+const PORT = 3000;
+app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));

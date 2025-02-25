@@ -31,10 +31,16 @@
       "updated": "Fri Feb 21 00:55:15 2025 -0500"
     },
     {
-      "term": "Component Checklist",
+      "term": "ADA Component Checklist",
       "definition": "A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers when building components.",
       "link": "https://dequeuniversity.com/checklists/web/",
-      "updated": "Sat Feb 22 21:17:51 2025 -0500"
+      "updated": "Sat Feb 22 22:57:15 2025 -0500"
+    },
+    {
+      "term": "Bootstrap",
+      "definition": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first, front-end web development. It was leveraged alongside cel-components styles to build this training.",
+      "link": "https://getbootstrap.com/",
+      "updated": "Mon Feb 24 23:51:46 2025 -0500"
     }
   ]
 }

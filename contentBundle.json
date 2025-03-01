@@ -40,7 +40,19 @@
       "term": "Bootstrap",
       "definition": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first, front-end web development. It was leveraged alongside cel-components styles to build this training.",
       "link": "https://getbootstrap.com/",
-      "updated": "Mon Feb 24 23:51:46 2025 -0500"
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
+    },
+    {
+      "term": "Landmarks",
+      "definition": "Landmarks are a way to identify the different sections of a page. They are used by screen readers to help users navigate the page.",
+      "link": "https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/general-principles.html",
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
+    },
+    {
+      "term": "MDN",
+      "definition": "Mozilla Developer Network (MDN) is a resource for developers, maintained by the community of developers and technical writers and hosting documentation for web technologies, including HTML, CSS, and JavaScript.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
     }
   ]
 }
